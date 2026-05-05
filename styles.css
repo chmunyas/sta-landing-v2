@@ -113,38 +113,7 @@ body a, body button, body [role="button"] {
   cursor: none !important;
 }
 
-/* === TRADE DATA TICKER === */
-.trade-ticker {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 999;
-  background: #050505;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-  overflow: hidden;
-  height: 32px;
-  display: flex;
-  align-items: center;
-}
-
-.ticker-track {
-  display: flex;
-  gap: 48px;
-  animation: tickerScroll 40s linear infinite;
-  white-space: nowrap;
-}
-
-.ticker-item {
-  font-family: 'Courier New', monospace;
-  font-size: 0.7rem;
-  color: var(--gold);
-  letter-spacing: 0.05em;
-  opacity: 0.7;
-}
-
-@keyframes tickerScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+/* === TRADE DATA TICKER — REMOVED === */
 
 /* === KINETIC OVERSIZED TYPOGRAPHY === */
 .kinetic-text {
@@ -230,7 +199,7 @@ body a, body button, body [role="button"] {
 /* === NAVIGATION === */
 .nav {
   position: fixed;
-  top: 32px; left: 0; right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 20px 0;
   transition: var(--transition);
@@ -286,19 +255,19 @@ body a, body button, body [role="button"] {
 }
 
 .nav-links a:hover {
-  color: var(--gold);
+  color: #ffffff;
 }
 
 .nav-cta {
-  background: var(--gold) !important;
-  color: var(--bg-dark) !important;
+  background: #2997FF !important;
+  color: #ffffff !important;
   padding: 8px 20px;
   border-radius: var(--radius-full);
   font-weight: 600 !important;
 }
 
 .nav-cta:hover {
-  background: var(--gold-light) !important;
+  background: #0077ED !important;
   transform: translateY(-1px);
 }
 
@@ -328,7 +297,7 @@ body a, body button, body [role="button"] {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 152px 24px 80px;
+  padding: 120px 24px 80px;
   text-align: center;
   overflow: hidden;
 }
@@ -465,56 +434,66 @@ body a, body button, body [role="button"] {
   50% { transform: rotate(45deg) translateY(6px); }
 }
 
-/* === BUTTONS === */
+/* === BUTTONS — Apple Action Hierarchy ===
+   Apple principles:
+   1. ONE clear primary action per section (high contrast, fills space)
+   2. Secondary actions are text-only or outlined — never compete
+   3. Actions use simple, direct verbs
+   4. Blue = action, White = primary on dark, Grey = secondary
+   5. Generous padding, no visual noise
+*/
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 28px;
+  padding: 14px 32px;
   border-radius: var(--radius-full);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   transition: var(--transition);
   cursor: pointer;
   border: none;
+  letter-spacing: -0.01em;
 }
 
 .btn-primary {
-  background: var(--gold);
-  color: var(--bg-dark);
+  background: #2997FF;
+  color: #ffffff;
+  box-shadow: 0 2px 12px rgba(41, 151, 255, 0.3);
 }
 
 .btn-primary:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+  background: #0077ED;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(41, 151, 255, 0.4);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #2997FF;
+  border: none;
+  padding: 14px 16px;
 }
 
 .btn-ghost:hover {
-  border-color: var(--gold);
-  color: var(--gold);
+  color: #0077ED;
+  text-decoration: underline;
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--gold);
-  border: 2px solid var(--gold);
+  color: #2997FF;
+  border: 1.5px solid rgba(41, 151, 255, 0.4);
 }
 
 .btn-outline:hover {
-  background: var(--gold);
-  color: var(--bg-dark);
+  background: rgba(41, 151, 255, 0.08);
+  border-color: #2997FF;
 }
 
-.btn-lg { padding: 14px 32px; font-size: 1rem; }
-.btn-xl { padding: 18px 40px; font-size: 1.1rem; }
+.btn-lg { padding: 16px 36px; font-size: 1.05rem; }
+.btn-xl { padding: 18px 44px; font-size: 1.1rem; }
 
 /* === SECTIONS === */
 .section {
@@ -1193,7 +1172,7 @@ body a, body button, body [role="button"] {
 }
 
 .footer-links a:hover {
-  color: var(--gold);
+  color: #ffffff;
 }
 
 .footer-bottom {
@@ -1217,7 +1196,7 @@ body a, body button, body [role="button"] {
 }
 
 .footer-legal a:hover {
-  color: var(--gold);
+  color: #ffffff;
 }
 
 /* === REVEAL ANIMATIONS === */
@@ -1301,8 +1280,6 @@ body a, body button, body [role="button"] {
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-mobile-toggle { display: flex; }
-  .trade-ticker { display: none; }
-  .nav { top: 0; }
   .custom-cursor { display: none; }
   body { cursor: auto !important; }
   body a, body button { cursor: auto !important; }
