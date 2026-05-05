@@ -1,0 +1,9 @@
+{
+  "name": "sta-landing-v2",
+  "version": "1.0.0",
+  "description": "Smart Trade Africa — Award-winning landing page v2",
+  "scripts": {
+    "dev": "npx serve . -p 3000 -s",
+    "start": "npx serve . -p 3000 -s"
+  }
+}

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="description" content="Smart Trade Africa — The digital backbone for intra-African trade. Tax, payments, supply chain, and compliance in one platform." />
+  <title>Smart Trade Africa — Trade Smarter. Trade Together.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- Cursor Glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">◆</span>
+        <span class="logo-text">Smart Trade Africa</span>
+      </a>
+      <div class="nav-links">
+        <a href="#problem">The Gap</a>
+        <a href="#solution">Solution</a>
+        <a href="#features">Features</a>
+        <a href="#impact">Impact</a>
+        <a href="https://tradeafricanow.com/explore" class="nav-cta">Explore Map</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-globe" id="heroGlobe"></div>
+      <div class="hero-particles" id="heroParticles"></div>
+    </div>
+    <div class="hero-content reveal">
+      <span class="hero-tag">The Future of African Trade</span>
+      <h1 class="hero-title">
+        Africa trades <span class="gold-highlight">$3.1 Trillion</span> globally.<br/>
+        Only <span class="danger-highlight">15%</span> stays within Africa.
+      </h1>
+      <p class="hero-subtitle">
+        Smart Trade Africa is the digital infrastructure that makes intra-African 
+        trade faster, transparent, and compliant — from customs to settlement.
+      </p>
+      <div class="hero-actions">
+        <a href="https://tradeafricanow.com/" class="btn btn-primary btn-lg">
+          Enter Platform
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#solution" class="btn btn-ghost btn-lg">
+          See How It Works
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-target="54">0</span>
+          <span class="hero-stat-label">Countries</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-target="220" data-prefix="$" data-suffix="B">0</span>
+          <span class="hero-stat-label">Intra-African Trade</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-target="8">0</span>
+          <span class="hero-stat-label">RECs Connected</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="section section-problem" id="problem">
+    <div class="container">
+      <div class="section-number reveal">01</div>
+      <h2 class="section-title reveal">The Gap</h2>
+      <p class="section-subtitle reveal">
+        African businesses face fragmented systems, opaque customs, manual tax filing, 
+        and settlement delays that cost billions annually.
+      </p>
+      <div class="problem-grid">
+        <div class="problem-card reveal">
+          <div class="problem-stat">72<span>hrs</span></div>
+          <p>Average customs clearance time at African borders</p>
+        </div>
+        <div class="problem-card reveal">
+          <div class="problem-stat">$4.5<span>B</span></div>
+          <p>Annual revenue lost to manual tax processing errors</p>
+        </div>
+        <div class="problem-card reveal">
+          <div class="problem-stat">23<span>%</span></div>
+          <p>Of cross-border payments fail or get delayed</p>
+        </div>
+        <div class="problem-card reveal">
+          <div class="problem-stat">0<span></span></div>
+          <p>Unified platforms connecting all 54 African nations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="section section-solution" id="solution">
+    <div class="container">
+      <div class="section-number reveal">02</div>
+      <h2 class="section-title reveal">The Solution</h2>
+      <p class="section-subtitle reveal">
+        One platform. Every trade touchpoint. From document creation to final settlement — 
+        automated, transparent, and AfCFTA-compliant.
+      </p>
+
+      <!-- Animated Flow Demo -->
+      <div class="flow-demo reveal">
+        <div class="flow-step active" data-step="1">
+          <div class="flow-icon">📄</div>
+          <span>Trade Document</span>
+        </div>
+        <div class="flow-connector"><div class="flow-pulse"></div></div>
+        <div class="flow-step" data-step="2">
+          <div class="flow-icon">🏛️</div>
+          <span>Tax Assessment</span>
+        </div>
+        <div class="flow-connector"><div class="flow-pulse"></div></div>
+        <div class="flow-step" data-step="3">
+          <div class="flow-icon">🚢</div>
+          <span>Customs Clear</span>
+        </div>
+        <div class="flow-connector"><div class="flow-pulse"></div></div>
+        <div class="flow-step" data-step="4">
+          <div class="flow-icon">💱</div>
+          <span>FX Settlement</span>
+        </div>
+        <div class="flow-connector"><div class="flow-pulse"></div></div>
+        <div class="flow-step" data-step="5">
+          <div class="flow-icon">✅</div>
+          <span>Complete</span>
+        </div>
+      </div>
+
+      <!-- Live Demo Mockup -->
+      <div class="demo-window reveal">
+        <div class="demo-toolbar">
+          <div class="demo-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="demo-url">tradeafricanow.com/trade/documents</span>
+        </div>
+        <div class="demo-screen">
+          <div class="demo-sidebar">
+            <div class="demo-nav-item active">Dashboard</div>
+            <div class="demo-nav-item">Documents</div>
+            <div class="demo-nav-item">Tax Engine</div>
+            <div class="demo-nav-item">Payments</div>
+            <div class="demo-nav-item">Supply Chain</div>
+          </div>
+          <div class="demo-content">
+            <div class="demo-header">
+              <h3>Trade Documents</h3>
+              <div class="demo-badge">12 Active</div>
+            </div>
+            <div class="demo-table">
+              <div class="demo-row demo-row-header">
+                <span>Reference</span><span>Route</span><span>Value</span><span>Status</span>
+              </div>
+              <div class="demo-row">
+                <span>TRD-2026-0847</span><span>KE → TZ</span><span>$124,500</span><span class="status-active">In Transit</span>
+              </div>
+              <div class="demo-row">
+                <span>TRD-2026-0846</span><span>NG → GH</span><span>$89,200</span><span class="status-complete">Cleared</span>
+              </div>
+              <div class="demo-row">
+                <span>TRD-2026-0845</span><span>ZA → KE</span><span>$312,000</span><span class="status-pending">Tax Review</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features / Four Pillars Section -->
+  <section class="section section-features" id="features">
+    <div class="container">
+      <div class="section-number reveal">03</div>
+      <h2 class="section-title reveal">Four Pillars</h2>
+      <p class="section-subtitle reveal">
+        Complete trade infrastructure — every pillar working together seamlessly.
+      </p>
+      <div class="pillars-grid">
+        <div class="pillar-card reveal">
+          <div class="pillar-glow"></div>
+          <div class="pillar-number">01</div>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="2">
+              <rect x="6" y="6" width="36" height="36" rx="4"/>
+              <path d="M16 24h16M24 16v16"/>
+              <circle cx="24" cy="24" r="4"/>
+            </svg>
+          </div>
+          <h3>Tax Engine</h3>
+          <p>Automated duty calculation, HS code classification, and real-time tax assessment across all AfCFTA member states.</p>
+          <ul class="pillar-features">
+            <li>Auto HS code mapping</li>
+            <li>Real-time duty rates</li>
+            <li>Exemption management</li>
+          </ul>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-glow"></div>
+          <div class="pillar-number">02</div>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="2">
+              <path d="M6 24C6 14 14 6 24 6"/>
+              <path d="M42 24c0 10-8 18-18 18"/>
+              <path d="M18 12l6-6 6 6"/>
+              <path d="M30 36l-6 6-6-6"/>
+              <circle cx="24" cy="24" r="6"/>
+            </svg>
+          </div>
+          <h3>FX Settlement</h3>
+          <p>Cross-border payment processing with real-time exchange rates, multi-currency ledgers, and instant settlement.</p>
+          <ul class="pillar-features">
+            <li>42 African currencies</li>
+            <li>T+0 settlement</li>
+            <li>Automated reconciliation</li>
+          </ul>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-glow"></div>
+          <div class="pillar-number">03</div>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="2">
+              <rect x="4" y="28" width="12" height="14" rx="2"/>
+              <rect x="18" y="20" width="12" height="22" rx="2"/>
+              <rect x="32" y="12" width="12" height="30" rx="2"/>
+              <path d="M10 20l14-10 14 2"/>
+              <circle cx="10" cy="20" r="2" fill="#D4AF37"/>
+              <circle cx="24" cy="10" r="2" fill="#D4AF37"/>
+              <circle cx="38" cy="12" r="2" fill="#D4AF37"/>
+            </svg>
+          </div>
+          <h3>Supply Chain</h3>
+          <p>End-to-end shipment tracking, warehouse management, and customs clearance with real-time visibility.</p>
+          <ul class="pillar-features">
+            <li>GPS live tracking</li>
+            <li>Port integration</li>
+            <li>Blockchain verification</li>
+          </ul>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="pillar-glow"></div>
+          <div class="pillar-number">04</div>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#D4AF37" stroke-width="2">
+              <path d="M24 4L4 14v20l20 10 20-10V14L24 4z"/>
+              <path d="M4 14l20 10 20-10"/>
+              <path d="M24 44V24"/>
+              <path d="M14 9l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>AfCFTA Compliance</h3>
+          <p>Built-in rules of origin verification, preferential tariff application, and regulatory compliance across all protocols.</p>
+          <ul class="pillar-features">
+            <li>Rules of origin engine</li>
+            <li>Tariff preference auto-apply</li>
+            <li>Regulatory reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section class="section section-map" id="map">
+    <div class="container">
+      <div class="section-number reveal">04</div>
+      <h2 class="section-title reveal">Live Trade Map</h2>
+      <p class="section-subtitle reveal">
+        Visualize real-time trade flows between 54 African nations. Click any country to explore bilateral data.
+      </p>
+      <div class="map-preview reveal">
+        <div class="map-container">
+          <!-- Simplified Africa SVG outline -->
+          <svg viewBox="0 0 600 700" class="africa-svg" id="africaSvg">
+            <defs>
+              <radialGradient id="glowGradient">
+                <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <!-- Trade route arcs -->
+            <g class="trade-arcs">
+              <path d="M320 250 Q 400 200 420 320" class="trade-arc arc-1" />
+              <path d="M200 300 Q 300 250 320 250" class="trade-arc arc-2" />
+              <path d="M350 500 Q 400 400 420 320" class="trade-arc arc-3" />
+              <path d="M200 300 Q 250 400 350 500" class="trade-arc arc-4" />
+              <path d="M320 250 Q 280 350 350 500" class="trade-arc arc-5" />
+              <path d="M180 200 Q 250 220 320 250" class="trade-arc arc-6" />
+            </g>
+            <!-- Country dots -->
+            <g class="country-dots">
+              <circle cx="180" cy="200" r="6" class="country-dot" data-country="Morocco"/>
+              <circle cx="320" cy="250" r="8" class="country-dot dot-active" data-country="Egypt"/>
+              <circle cx="200" cy="300" r="7" class="country-dot" data-country="Nigeria"/>
+              <circle cx="420" cy="320" r="6" class="country-dot" data-country="Kenya"/>
+              <circle cx="350" cy="500" r="7" class="country-dot" data-country="South Africa"/>
+              <circle cx="280" cy="380" r="5" class="country-dot" data-country="DRC"/>
+              <circle cx="230" cy="350" r="5" class="country-dot" data-country="Ghana"/>
+              <circle cx="370" cy="400" r="5" class="country-dot" data-country="Tanzania"/>
+            </g>
+            <!-- Pulse rings -->
+            <g class="pulse-rings">
+              <circle cx="320" cy="250" r="8" class="pulse-ring"/>
+              <circle cx="200" cy="300" r="8" class="pulse-ring" style="animation-delay: 0.5s"/>
+              <circle cx="350" cy="500" r="8" class="pulse-ring" style="animation-delay: 1s"/>
+            </g>
+          </svg>
+          <!-- Map labels -->
+          <div class="map-labels">
+            <span class="map-label" style="top: 26%; left: 48%">Egypt<br/><small>$18.2B</small></span>
+            <span class="map-label" style="top: 38%; left: 28%">Nigeria<br/><small>$14.7B</small></span>
+            <span class="map-label" style="top: 68%; left: 54%">South Africa<br/><small>$22.1B</small></span>
+            <span class="map-label" style="top: 42%; left: 66%">Kenya<br/><small>$8.9B</small></span>
+          </div>
+        </div>
+        <a href="https://tradeafricanow.com/explore" class="btn btn-primary">
+          Open Interactive Map
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact / Proof Section -->
+  <section class="section section-impact" id="impact">
+    <div class="container">
+      <div class="section-number reveal">05</div>
+      <h2 class="section-title reveal">Proven Impact</h2>
+      <p class="section-subtitle reveal">
+        Real results from real African trade corridors.
+      </p>
+      <div class="impact-grid">
+        <div class="impact-card reveal">
+          <div class="impact-quote">
+            "Customs clearance time reduced from 72 hours to under 8 hours 
+            on the Mombasa–Nairobi corridor."
+          </div>
+          <div class="impact-source">
+            <div class="impact-avatar">KRA</div>
+            <div>
+              <strong>Kenya Revenue Authority</strong>
+              <span>Pilot Program, 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="impact-card reveal">
+          <div class="impact-quote">
+            "$2.4M in cross-border duties processed automatically in the first 
+            72 hours of deployment."
+          </div>
+          <div class="impact-source">
+            <div class="impact-avatar">EAC</div>
+            <div>
+              <strong>East African Community</strong>
+              <span>Integration Report, 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="impact-card reveal">
+          <div class="impact-quote">
+            "First platform to provide real-time AfCFTA rules-of-origin 
+            verification for SME traders."
+          </div>
+          <div class="impact-source">
+            <div class="impact-avatar">AU</div>
+            <div>
+              <strong>African Union — AfCFTA Secretariat</strong>
+              <span>Digital Trade Initiative</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Big Stats Row -->
+      <div class="big-stats reveal">
+        <div class="big-stat">
+          <span class="big-stat-number" data-target="89" data-suffix="%">0</span>
+          <span class="big-stat-label">Faster Clearance</span>
+        </div>
+        <div class="big-stat">
+          <span class="big-stat-number" data-target="2.4" data-prefix="$" data-suffix="M">0</span>
+          <span class="big-stat-label">Processed in 72hrs</span>
+        </div>
+        <div class="big-stat">
+          <span class="big-stat-number" data-target="12" data-suffix="x">0</span>
+          <span class="big-stat-label">ROI for Traders</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-cta" id="cta">
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2 class="cta-title">Ready to Trade Smarter?</h2>
+        <p class="cta-text">
+          Join the platform connecting 54 African nations in one unified trade ecosystem.
+        </p>
+        <div class="cta-actions">
+          <a href="https://tradeafricanow.com/" class="btn btn-primary btn-xl">
+            Launch Platform
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://tradeafricanow.com/explore" class="btn btn-outline btn-xl">
+            Explore Trade Data
+          </a>
+        </div>
+        <div class="cta-trust">
+          <span>Trusted by</span>
+          <div class="trust-logos">
+            <span class="trust-badge">AfCFTA</span>
+            <span class="trust-badge">EAC</span>
+            <span class="trust-badge">ECOWAS</span>
+            <span class="trust-badge">SADC</span>
+            <span class="trust-badge">COMESA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-icon">◆</span>
+          <span class="logo-text">Smart Trade Africa</span>
+          <p>The digital backbone for intra-African trade.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <a href="#">Trade Documents</a>
+          <a href="#">Tax Engine</a>
+          <a href="#">Payments</a>
+          <a href="#">Supply Chain</a>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <a href="#">API Documentation</a>
+          <a href="#">AfCFTA Guide</a>
+          <a href="#">HS Code Lookup</a>
+          <a href="#">Trade Data</a>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Smart Trade Africa. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
