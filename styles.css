@@ -332,6 +332,39 @@ body a, body button, body [role="button"] {
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+/* African Proverb */
+.proverb {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.proverb-quote {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.proverb-cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #D4AF37;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
