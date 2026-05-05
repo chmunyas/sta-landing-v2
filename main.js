@@ -5,9 +5,11 @@
    ============================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // === CURSOR GLOW ===
+  // === CUSTOM BRANDED CURSOR ===
+  const customCursor = document.getElementById('customCursor');
   const cursorGlow = document.getElementById('cursorGlow');
   let mouseX = 0, mouseY = 0;
+  let cursorX = 0, cursorY = 0;
   let glowX = 0, glowY = 0;
 
   document.addEventListener('mousemove', (e) => {
@@ -15,27 +17,63 @@ document.addEventListener('DOMContentLoaded', () => {
     mouseY = e.clientY;
   });
 
-  function animateGlow() {
-    glowX += (mouseX - glowX) * 0.08;
-    glowY += (mouseY - glowY) * 0.08;
+  function animateCursor() {
+    // Cursor follows mouse with slight lag
+    cursorX += (mouseX - cursorX) * 0.2;
+    cursorY += (mouseY - cursorY) * 0.2;
+    customCursor.style.left = cursorX + 'px';
+    customCursor.style.top = cursorY + 'px';
+
+    // Glow follows with more lag
+    glowX += (mouseX - glowX) * 0.06;
+    glowY += (mouseY - glowY) * 0.06;
     cursorGlow.style.left = glowX + 'px';
     cursorGlow.style.top = glowY + 'px';
-    requestAnimationFrame(animateGlow);
+
+    requestAnimationFrame(animateCursor);
   }
-  animateGlow();
+  animateCursor();
+
+  // Cursor hover state on interactive elements
+  const interactiveElements = document.querySelectorAll('a, button, .pillar-card, .problem-card, .country-dot');
+  interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => customCursor.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => customCursor.classList.remove('hovering'));
+  });
+
+  // === MAGNETIC BUTTONS ===
+  const magneticBtns = document.querySelectorAll('.magnetic-btn');
+  magneticBtns.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+
+  // === KINETIC TEXT (scroll-driven) ===
+  const kineticText = document.getElementById('kineticText');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      kineticText.classList.add('scrolled');
+    } else {
+      kineticText.classList.remove('scrolled');
+    }
+  });
 
   // === NAV SCROLL BEHAVIOR ===
   const nav = document.getElementById('nav');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > 80) {
+    if (window.scrollY > 80) {
       nav.classList.add('scrolled');
     } else {
       nav.classList.remove('scrolled');
     }
-    lastScroll = currentScroll;
   });
 
   // === MOBILE NAV TOGGLE ===

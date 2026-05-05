@@ -87,6 +87,139 @@ body:hover .cursor-glow {
   opacity: 1;
 }
 
+/* === CUSTOM BRANDED CURSOR === */
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor svg {
+  transition: transform 0.2s ease, opacity 0.2s;
+}
+
+.custom-cursor.hovering svg {
+  transform: scale(1.6) rotate(45deg);
+}
+
+body {
+  cursor: none !important;
+}
+
+body a, body button, body [role="button"] {
+  cursor: none !important;
+}
+
+/* === TRADE DATA TICKER === */
+.trade-ticker {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: #050505;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  overflow: hidden;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-track {
+  display: flex;
+  gap: 48px;
+  animation: tickerScroll 40s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* === KINETIC OVERSIZED TYPOGRAPHY === */
+.kinetic-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  display: flex;
+  gap: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.kinetic-text span {
+  font-family: var(--font-heading);
+  font-size: clamp(12rem, 25vw, 22rem);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(212, 175, 55, 0.06);
+  line-height: 0.8;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.kinetic-text.scrolled span:nth-child(1) { transform: translateY(-20px) rotate(-2deg); }
+.kinetic-text.scrolled span:nth-child(2) { transform: translateY(15px); }
+.kinetic-text.scrolled span:nth-child(3) { transform: translateY(-10px) rotate(1deg); }
+.kinetic-text.scrolled span:nth-child(4) { transform: translateY(25px); }
+.kinetic-text.scrolled span:nth-child(5) { transform: translateY(-15px) rotate(-1deg); }
+
+/* === MAGNETIC BUTTONS === */
+.magnetic-btn {
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* === HORIZONTAL SCROLL === */
+.horizontal-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px 0 40px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-dark) transparent;
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar { height: 4px; }
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
+.horizontal-scroll-wrapper::-webkit-scrollbar-track { background: transparent; }
+
+.horizontal-scroll-track {
+  display: flex;
+  gap: 24px;
+  padding: 0 max(24px, calc((100vw - 1200px) / 2));
+  width: max-content;
+}
+
+.horizontal-scroll-track .pillar-card {
+  min-width: 320px;
+  max-width: 350px;
+  flex-shrink: 0;
+}
+
+/* === SECTION CLIP-PATH TRANSITIONS === */
+.section-problem::after,
+.section-solution::after,
+.section-features::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--bg-dark), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
 /* === CONTAINER === */
 .container {
   max-width: 1200px;
@@ -97,7 +230,7 @@ body:hover .cursor-glow {
 /* === NAVIGATION === */
 .nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 32px; left: 0; right: 0;
   z-index: 1000;
   padding: 20px 0;
   transition: var(--transition);
@@ -195,8 +328,9 @@ body:hover .cursor-glow {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 120px 24px 80px;
+  padding: 152px 24px 80px;
   text-align: center;
+  overflow: hidden;
 }
 
 .hero-bg {
@@ -386,6 +520,16 @@ body:hover .cursor-glow {
 .section {
   padding: 140px 0;
   position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, var(--bg-dark), transparent);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .section-number {
@@ -670,6 +814,11 @@ body:hover .cursor-glow {
 /* === FEATURES / PILLARS === */
 .section-features {
   background: var(--bg-dark);
+  overflow: visible;
+}
+
+.section-features .container {
+  margin-bottom: 20px;
 }
 
 .pillars-grid {
@@ -1089,14 +1238,79 @@ body:hover .cursor-glow {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* === ACCENT COLOR POPS === */
+.section-problem .problem-stat {
+  background: linear-gradient(135deg, var(--gold), #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-cta {
+  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.04) 0%, transparent 70%),
+              radial-gradient(ellipse at 20% 80%, rgba(255, 107, 53, 0.02) 0%, transparent 40%);
+}
+
+/* === TEXT DISTORTION ON HOVER === */
+.section-title {
+  transition: letter-spacing 0.4s ease, transform 0.4s ease;
+}
+
+.section-title:hover {
+  letter-spacing: -1px;
+}
+
+.pillar-card h3 {
+  transition: transform 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.pillar-card:hover h3 {
+  transform: skewX(-2deg);
+  letter-spacing: 1px;
+}
+
+/* === ANIMATED GRADIENT BORDERS === */
+.pillar-card {
+  position: relative;
+}
+
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--gold), transparent, rgba(255, 107, 53, 0.3), transparent, var(--gold));
+  background-size: 400% 400%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s;
+  animation: borderGradient 6s linear infinite;
+}
+
+.pillar-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes borderGradient {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-mobile-toggle { display: flex; }
+  .trade-ticker { display: none; }
+  .nav { top: 0; }
+  .custom-cursor { display: none; }
+  body { cursor: auto !important; }
+  body a, body button { cursor: auto !important; }
 
   .hero { padding: 100px 20px 60px; }
   .hero-stats { gap: 24px; }
   .hero-stat-number { font-size: 2rem; }
+  .kinetic-text span { font-size: 6rem; }
 
   .section { padding: 80px 0; }
   .section-number { font-size: 4rem; }
@@ -1108,7 +1322,7 @@ body:hover .cursor-glow {
   .demo-screen { grid-template-columns: 1fr; }
   .demo-sidebar { display: none; }
 
-  .pillars-grid { grid-template-columns: 1fr; }
+  .horizontal-scroll-track .pillar-card { min-width: 280px; }
 
   .big-stats { gap: 30px; }
   .big-stat-number { font-size: 2.5rem; }
@@ -1125,4 +1339,5 @@ body:hover .cursor-glow {
   .problem-grid { grid-template-columns: 1fr; }
   .impact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  .kinetic-text span { font-size: 4rem; }
 }

@@ -15,8 +15,35 @@
   <!-- Grain Overlay -->
   <div class="grain-overlay"></div>
 
-  <!-- Cursor Glow -->
+  <!-- Custom Branded Cursor -->
+  <div class="custom-cursor" id="customCursor">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="#D4AF37" opacity="0.9"/>
+    </svg>
+  </div>
   <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Live Trade Ticker -->
+  <div class="trade-ticker" id="tradeTicker">
+    <div class="ticker-track">
+      <span class="ticker-item">KE→TZ $124,500 TEA EXPORT ✓</span>
+      <span class="ticker-item">NG→GH $89,200 COCOA PROCESSED ✓</span>
+      <span class="ticker-item">ZA→KE $312,000 MACHINERY ✓</span>
+      <span class="ticker-item">ET→DJ $67,800 TEXTILES ✓</span>
+      <span class="ticker-item">MA→SN $445,000 PHOSPHATES ✓</span>
+      <span class="ticker-item">EG→TN $198,300 CHEMICALS ✓</span>
+      <span class="ticker-item">GH→CI $156,700 ALUMINUM ✓</span>
+      <span class="ticker-item">TZ→RW $43,200 AGRICULTURE ✓</span>
+      <span class="ticker-item">KE→TZ $124,500 TEA EXPORT ✓</span>
+      <span class="ticker-item">NG→GH $89,200 COCOA PROCESSED ✓</span>
+      <span class="ticker-item">ZA→KE $312,000 MACHINERY ✓</span>
+      <span class="ticker-item">ET→DJ $67,800 TEXTILES ✓</span>
+      <span class="ticker-item">MA→SN $445,000 PHOSPHATES ✓</span>
+      <span class="ticker-item">EG→TN $198,300 CHEMICALS ✓</span>
+      <span class="ticker-item">GH→CI $156,700 ALUMINUM ✓</span>
+      <span class="ticker-item">TZ→RW $43,200 AGRICULTURE ✓</span>
+    </div>
+  </div>
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
@@ -44,22 +71,26 @@
       <div class="hero-globe" id="heroGlobe"></div>
       <div class="hero-particles" id="heroParticles"></div>
     </div>
+    <!-- Oversized Kinetic Typography -->
+    <div class="kinetic-text" id="kineticText">
+      <span>T</span><span>R</span><span>A</span><span>D</span><span>E</span>
+    </div>
     <div class="hero-content reveal">
       <span class="hero-tag">The Future of African Trade</span>
       <h1 class="hero-title">
-        Africa trades <span class="gold-highlight">$3.1 Trillion</span> globally.<br/>
-        Only <span class="danger-highlight">15%</span> stays within Africa.
+        Africa trades <span class="gold-highlight">$1.5 Trillion</span> annually.<br/>
+        Only <span class="danger-highlight">16%</span> stays within Africa.
       </h1>
       <p class="hero-subtitle">
         Smart Trade Africa is the digital infrastructure that makes intra-African 
-        trade faster, transparent, and compliant — from customs to settlement.
+        trade faster, transparent, and AfCFTA-compliant — from customs to settlement.
       </p>
       <div class="hero-actions">
-        <a href="https://tradeafricanow.com/" class="btn btn-primary btn-lg">
+        <a href="https://tradeafricanow.com/" class="btn btn-primary btn-lg magnetic-btn">
           Enter Platform
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#solution" class="btn btn-ghost btn-lg">
+        <a href="#solution" class="btn btn-ghost btn-lg magnetic-btn">
           See How It Works
         </a>
       </div>
@@ -69,8 +100,8 @@
           <span class="hero-stat-label">Countries</span>
         </div>
         <div class="hero-stat">
-          <span class="hero-stat-number" data-target="220" data-prefix="$" data-suffix="B">0</span>
-          <span class="hero-stat-label">Intra-African Trade</span>
+          <span class="hero-stat-number" data-target="230" data-prefix="$" data-suffix="B">0</span>
+          <span class="hero-stat-label">Intra-African Trade (2026)</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-number" data-target="8">0</span>
@@ -193,7 +224,7 @@
     </div>
   </section>
 
-  <!-- Features / Four Pillars Section -->
+  <!-- Features / Four Pillars — Horizontal Scroll -->
   <section class="section section-features" id="features">
     <div class="container">
       <div class="section-number reveal">03</div>
@@ -201,7 +232,9 @@
       <p class="section-subtitle reveal">
         Complete trade infrastructure — every pillar working together seamlessly.
       </p>
-      <div class="pillars-grid">
+    </div>
+    <div class="horizontal-scroll-wrapper">
+      <div class="horizontal-scroll-track">
         <div class="pillar-card reveal">
           <div class="pillar-glow"></div>
           <div class="pillar-number">01</div>
@@ -213,7 +246,7 @@
             </svg>
           </div>
           <h3>Tax Engine</h3>
-          <p>Automated duty calculation, HS code classification, and real-time tax assessment across all AfCFTA member states.</p>
+          <p>Automated duty calculation, HS code classification, and real-time tax assessment across all 54 AfCFTA member states.</p>
           <ul class="pillar-features">
             <li>Auto HS code mapping</li>
             <li>Real-time duty rates</li>
@@ -233,10 +266,10 @@
             </svg>
           </div>
           <h3>FX Settlement</h3>
-          <p>Cross-border payment processing with real-time exchange rates, multi-currency ledgers, and instant settlement.</p>
+          <p>Cross-border payments via PAPSS with real-time exchange rates, multi-currency ledgers, reducing FX costs by 20–30%.</p>
           <ul class="pillar-features">
             <li>42 African currencies</li>
-            <li>T+0 settlement</li>
+            <li>PAPSS-integrated</li>
             <li>Automated reconciliation</li>
           </ul>
         </div>
@@ -255,7 +288,7 @@
             </svg>
           </div>
           <h3>Supply Chain</h3>
-          <p>End-to-end shipment tracking, warehouse management, and customs clearance with real-time visibility.</p>
+          <p>End-to-end shipment tracking, warehouse management, and customs clearance with real-time visibility across corridors.</p>
           <ul class="pillar-features">
             <li>GPS live tracking</li>
             <li>Port integration</li>
